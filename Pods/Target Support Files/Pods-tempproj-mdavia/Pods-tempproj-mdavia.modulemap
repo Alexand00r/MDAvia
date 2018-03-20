@@ -1,0 +1,6 @@
+framework module Pods_tempproj_mdavia {
+  umbrella header "Pods-tempproj-mdavia-umbrella.h"
+
+  export *
+  module * { export * }
+}

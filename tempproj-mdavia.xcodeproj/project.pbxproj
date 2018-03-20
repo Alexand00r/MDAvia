@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C738DCF483AF35D25F4A8720 /* Pods_tempproj_mdavia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54A0361CCC1D710BE4F831F /* Pods_tempproj_mdavia.framework */; };
 		C809FE3C20605B8900843233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C809FE3B20605B8900843233 /* AppDelegate.swift */; };
 		C809FE3E20605B8900843233 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C809FE3D20605B8900843233 /* FirstViewController.swift */; };
 		C809FE4020605B8900843233 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C809FE3F20605B8900843233 /* SecondViewController.swift */; };
 		C809FE4320605B8900843233 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C809FE4120605B8900843233 /* Main.storyboard */; };
 		C809FE4520605B8900843233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C809FE4420605B8900843233 /* Assets.xcassets */; };
 		C809FE4820605B8900843233 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C809FE4620605B8900843233 /* LaunchScreen.storyboard */; };
+		C809FE5020605C3D00843233 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C809FE4F20605C3D00843233 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4583051F436F1BAFA6DEE243 /* Pods-tempproj-mdavia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tempproj-mdavia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tempproj-mdavia/Pods-tempproj-mdavia.debug.xcconfig"; sourceTree = "<group>"; };
+		C54A0361CCC1D710BE4F831F /* Pods_tempproj_mdavia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tempproj_mdavia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C809FE3820605B8900843233 /* tempproj-mdavia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tempproj-mdavia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C809FE3B20605B8900843233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C809FE3D20605B8900843233 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,9 @@
 		C809FE4420605B8900843233 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C809FE4720605B8900843233 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C809FE4920605B8900843233 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C809FE4F20605C3D00843233 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C88D3B3E206177C800452724 /* tempproj-mdavia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "tempproj-mdavia.entitlements"; sourceTree = "<group>"; };
+		FED6C1B1AB2DF4DEE35A0701 /* Pods-tempproj-mdavia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tempproj-mdavia.release.xcconfig"; path = "Pods/Target Support Files/Pods-tempproj-mdavia/Pods-tempproj-mdavia.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +38,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C738DCF483AF35D25F4A8720 /* Pods_tempproj_mdavia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		695EB9DDF0419400B12CB688 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4583051F436F1BAFA6DEE243 /* Pods-tempproj-mdavia.debug.xcconfig */,
+				FED6C1B1AB2DF4DEE35A0701 /* Pods-tempproj-mdavia.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C809FE2F20605B8900843233 = {
 			isa = PBXGroup;
 			children = (
 				C809FE3A20605B8900843233 /* tempproj-mdavia */,
 				C809FE3920605B8900843233 /* Products */,
+				695EB9DDF0419400B12CB688 /* Pods */,
+				DE1E6097A08F69B963AB13C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +75,8 @@
 		C809FE3A20605B8900843233 /* tempproj-mdavia */ = {
 			isa = PBXGroup;
 			children = (
+				C88D3B3E206177C800452724 /* tempproj-mdavia.entitlements */,
+				C809FE4F20605C3D00843233 /* GoogleService-Info.plist */,
 				C809FE3B20605B8900843233 /* AppDelegate.swift */,
 				C809FE3D20605B8900843233 /* FirstViewController.swift */,
 				C809FE3F20605B8900843233 /* SecondViewController.swift */,
@@ -67,6 +88,14 @@
 			path = "tempproj-mdavia";
 			sourceTree = "<group>";
 		};
+		DE1E6097A08F69B963AB13C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C54A0361CCC1D710BE4F831F /* Pods_tempproj_mdavia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C809FE4C20605B8900843233 /* Build configuration list for PBXNativeTarget "tempproj-mdavia" */;
 			buildPhases = (
+				57A2AB0674B41ED8CC33FC17 /* [CP] Check Pods Manifest.lock */,
 				C809FE3420605B8900843233 /* Sources */,
 				C809FE3520605B8900843233 /* Frameworks */,
 				C809FE3620605B8900843233 /* Resources */,
+				2CC1BB9EDF81A67D2CEAFB78 /* [CP] Embed Pods Frameworks */,
+				74F1E133282A819865C1BC63 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -100,6 +132,11 @@
 					C809FE3720605B8900843233 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -127,12 +164,71 @@
 			buildActionMask = 2147483647;
 			files = (
 				C809FE4820605B8900843233 /* LaunchScreen.storyboard in Resources */,
+				C809FE5020605C3D00843233 /* GoogleService-Info.plist in Resources */,
 				C809FE4520605B8900843233 /* Assets.xcassets in Resources */,
 				C809FE4320605B8900843233 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CC1BB9EDF81A67D2CEAFB78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-tempproj-mdavia/Pods-tempproj-mdavia-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tempproj-mdavia/Pods-tempproj-mdavia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57A2AB0674B41ED8CC33FC17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tempproj-mdavia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74F1E133282A819865C1BC63 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tempproj-mdavia/Pods-tempproj-mdavia-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C809FE3420605B8900843233 /* Sources */ = {
@@ -276,9 +372,12 @@
 		};
 		C809FE4D20605B8900843233 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4583051F436F1BAFA6DEE243 /* Pods-tempproj-mdavia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "tempproj-mdavia/tempproj-mdavia.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JTS2Z7UF8T;
 				INFOPLIST_FILE = "tempproj-mdavia/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexand00r-Co.tempproj-mdavia";
@@ -290,9 +389,12 @@
 		};
 		C809FE4E20605B8900843233 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FED6C1B1AB2DF4DEE35A0701 /* Pods-tempproj-mdavia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "tempproj-mdavia/tempproj-mdavia.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JTS2Z7UF8T;
 				INFOPLIST_FILE = "tempproj-mdavia/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexand00r-Co.tempproj-mdavia";
