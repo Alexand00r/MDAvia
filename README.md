@@ -1,2 +1,2 @@
 # MDAvia
-Project for searching and buying tickets for planes
+Project for searching and buying tickets
