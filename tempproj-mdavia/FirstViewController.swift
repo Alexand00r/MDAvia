@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FirstViewController: UIViewController {
     
@@ -17,8 +18,9 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var LabelMail: UILabel!
     
     @IBOutlet weak var TextPhoneCode: UITextField!
-    @IBOutlet weak var TextMailCode: UITextField!
 
+    @IBOutlet weak var TextMailPass: UITextField!
+    
     
 //    @IBAction func PhoneNumEnter(_ sender: Any) {
 //        LabelPhoneNum.text = "+" + TextPhoneNum.text!
@@ -34,22 +36,21 @@ class FirstViewController: UIViewController {
 //        }
 //    }
     
-    @IBAction func MailEnter(_ sender: Any) {
-        LabelMail.text = TextMail.text!
-        
+    @IBAction func MailReg(_ sender: Any) {
         
         
     }
+    
+    @IBAction func MailAuth(_ sender: Any) {
+        
+        
+    }
+    
     
 //    @IBAction func CheckPhoneCode(_ sender: Any) {
 //
 //        
 //    }
-    
-    @IBAction func CheckMailCode(_ sender: Any) {
-        
-        
-    }
     
     
     override func viewDidLoad() {
