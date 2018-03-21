@@ -36,14 +36,41 @@ class FirstViewController: UIViewController {
 //        }
 //    }
     
+  
+    
     @IBAction func MailReg(_ sender: Any) {
-        Auth.auth().createUser(withEmail: TextMail.text!, password: TextMailPass.text!) { (user, error) in
+        let email = TextMail.text
+        let pass = TextMailPass.text
+        if TextMail.text == "" || TextMailPass.text == "" {
+            let alertController = UIAlertController(title: "Ошибка", message: "Введите почту и пароль", preferredStyle: .alert)
             
-                if let error = error {
-                    print(error)
-                    return
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            present(alertController, animated: true, completion: nil)
+            
+        } else {
+            Auth.auth().createUser(withEmail: email!, password: pass!) { (user, error) in
+                
+                if error == nil {
+                    print("Регистрация пройдена")
+                    //Goes to the Setup page which lets the user take a photo for their profile picture and also chose a username
+                    
+//                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+//                    self.present(vc!, animated: true, completion: nil)
+                    
+                } else {
+                    let alertController = UIAlertController(title: "Ошибка", message: error?.localizedDescription, preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
                 }
-                print("Аккаунт \(user!.email!) создан")
+            }
+            
+            
+            
         }
         
     }
