@@ -9,6 +9,9 @@
 import UIKit
 import Firebase
 
+
+
+
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var TextPhoneNum: UITextField!
@@ -37,13 +40,56 @@ class FirstViewController: UIViewController {
 //    }
     
     @IBAction func MailReg(_ sender: Any) {
-        
-        
+        showTextInputPrompt(withMessage: "Email:") { (userPressedOK, email) in
+            if let email = email {
+                self.showTextInputPrompt(withMessage: "Password:") { (userPressedOK, password) in
+                    if let password = password {
+                        self.showSpinner {
+                            // [START create_user]
+                            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+                                // [START_EXCLUDE]
+                                self.hideSpinner {
+                                    if let error = error {
+                                        self.showMessagePrompt(error.localizedDescription)
+                                        return
+                                    }
+                                    print("\(user!.email!) created")
+                                    self.navigationController!.popViewController(animated: true)
+                                }
+                                // [END_EXCLUDE]
+                            }
+                            // [END create_user]
+                        }
+                    } else {
+                        self.showMessagePrompt("password can't be empty")
+                    }
+                }
+            } else {
+                self.showMessagePrompt("email can't be empty")
+            }
+        }
     }
     
     @IBAction func MailAuth(_ sender: Any) {
-        
-        
+        if let email = self.TextMail.text, let password = self.TextMailPass.text {
+            showSpinner {
+                // [START headless_email_auth]
+                Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+                    // [START_EXCLUDE]
+                    self.hideSpinner {
+                        if let error = error {
+                            self.showMessagePrompt(error.localizedDescription)
+                            return
+                        }
+                        self.navigationController!.popViewController(animated: true)
+                    }
+                    // [END_EXCLUDE]
+                }
+                // [END headless_email_auth]
+            }
+        } else {
+            self.showMessagePrompt("email/password can't be empty")
+        }
     }
     
     
