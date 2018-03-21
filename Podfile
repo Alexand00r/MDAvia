@@ -10,5 +10,6 @@ target 'tempproj-mdavia' do
   # Pods for tempproj-mdavia
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
 end
