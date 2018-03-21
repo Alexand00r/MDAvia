@@ -38,35 +38,39 @@ class FirstViewController: UIViewController {
     
     @IBAction func MailReg(_ sender: Any) {
         Auth.auth().createUser(withEmail: TextMail.text!, password: TextMailPass.text!) { (user, error) in
-            // [START_EXCLUDE]
             
                 if let error = error {
                     print(error)
                     return
                 }
-                print("\(user!.email!) created")
-            
-            // [END_EXCLUDE]
+                print("Аккаунт \(user!.email!) создан")
         }
         
     }
     
     @IBAction func MailAuth(_ sender: Any) {
         Auth.auth().signIn(withEmail: TextMail.text!, password: TextMailPass.text!) { (user, error) in
-            // [START_EXCLUDE]
             
-                if let error = error {
-                    print(error)
-                    return
-                }
+            if let error = error {
+                print(error)
+                return
+            } else {
+                print("Вход в аккаунт прошел успешно")
+
+            }
             
-            // [END_EXCLUDE]
         }
         
     }
     
     @IBAction func LogOut(_ sender: Any) {
-        
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            print("Выход из аккаунта прошел успешно")
+        } catch let signOutError as NSError {
+            print ("Ошибка логаута: %@", signOutError)
+        }
         
     }
     
