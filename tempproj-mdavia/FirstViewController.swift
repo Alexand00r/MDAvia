@@ -37,15 +37,38 @@ class FirstViewController: UIViewController {
 //    }
     
     @IBAction func MailReg(_ sender: Any) {
-        
+        Auth.auth().createUser(withEmail: TextMail.text!, password: TextMailPass.text!) { (user, error) in
+            // [START_EXCLUDE]
+            
+                if let error = error {
+                    print(error)
+                    return
+                }
+                print("\(user!.email!) created")
+            
+            // [END_EXCLUDE]
+        }
         
     }
     
     @IBAction func MailAuth(_ sender: Any) {
-        
+        Auth.auth().signIn(withEmail: TextMail.text!, password: TextMailPass.text!) { (user, error) in
+            // [START_EXCLUDE]
+            
+                if let error = error {
+                    print(error)
+                    return
+                }
+            
+            // [END_EXCLUDE]
+        }
         
     }
     
+    @IBAction func LogOut(_ sender: Any) {
+        
+        
+    }
     
 //    @IBAction func CheckPhoneCode(_ sender: Any) {
 //
