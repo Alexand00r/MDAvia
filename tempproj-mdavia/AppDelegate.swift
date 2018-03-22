@@ -71,6 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             
         }
         
+        ProfileViewController().profileDataUpdate()
+
     }
     
     
