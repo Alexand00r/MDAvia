@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
-class GoogleSignInViewController: UIViewController {
+class GoogleSignInViewController: UIViewController /*GIDSignInDelegate*/ {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+//        GIDSignIn.sharedInstance().uiDelegate = self
+//        GIDSignIn.sharedInstance().signIn()
     }
 
     override func didReceiveMemoryWarning() {
