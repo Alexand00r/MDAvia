@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C738DCF483AF35D25F4A8720 /* Pods_tempproj_mdavia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54A0361CCC1D710BE4F831F /* Pods_tempproj_mdavia.framework */; };
 		C809FE3C20605B8900843233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C809FE3B20605B8900843233 /* AppDelegate.swift */; };
-		C809FE3E20605B8900843233 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C809FE3D20605B8900843233 /* LoginViewController.swift */; };
+		C809FE3E20605B8900843233 /* MailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C809FE3D20605B8900843233 /* MailViewController.swift */; };
 		C809FE4020605B8900843233 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C809FE3F20605B8900843233 /* OverviewViewController.swift */; };
 		C809FE4320605B8900843233 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C809FE4120605B8900843233 /* Main.storyboard */; };
 		C809FE4520605B8900843233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C809FE4420605B8900843233 /* Assets.xcassets */; };
@@ -17,6 +17,7 @@
 		C809FE5020605C3D00843233 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C809FE4F20605C3D00843233 /* GoogleService-Info.plist */; };
 		C81F64CF2062F09B004CD71E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F64CE2062F09B004CD71E /* ProfileViewController.swift */; };
 		C81F64D120632644004CD71E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F64D020632644004CD71E /* SearchViewController.swift */; };
+		C81F64D420634725004CD71E /* GoogleSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F64D320634725004CD71E /* GoogleSignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +25,7 @@
 		C54A0361CCC1D710BE4F831F /* Pods_tempproj_mdavia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tempproj_mdavia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C809FE3820605B8900843233 /* tempproj-mdavia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tempproj-mdavia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C809FE3B20605B8900843233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C809FE3D20605B8900843233 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C809FE3D20605B8900843233 /* MailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailViewController.swift; sourceTree = "<group>"; };
 		C809FE3F20605B8900843233 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		C809FE4220605B8900843233 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C809FE4420605B8900843233 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,6 +34,7 @@
 		C809FE4F20605C3D00843233 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C81F64CE2062F09B004CD71E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C81F64D020632644004CD71E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C81F64D320634725004CD71E /* GoogleSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInViewController.swift; sourceTree = "<group>"; };
 		C88D3B3E206177C800452724 /* tempproj-mdavia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "tempproj-mdavia.entitlements"; sourceTree = "<group>"; };
 		FED6C1B1AB2DF4DEE35A0701 /* Pods-tempproj-mdavia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tempproj-mdavia.release.xcconfig"; path = "Pods/Target Support Files/Pods-tempproj-mdavia/Pods-tempproj-mdavia.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,11 +81,10 @@
 		C809FE3A20605B8900843233 /* tempproj-mdavia */ = {
 			isa = PBXGroup;
 			children = (
+				C81F64D220633333004CD71E /* Profile */,
 				C88D3B3E206177C800452724 /* tempproj-mdavia.entitlements */,
 				C809FE4F20605C3D00843233 /* GoogleService-Info.plist */,
 				C809FE3B20605B8900843233 /* AppDelegate.swift */,
-				C809FE3D20605B8900843233 /* LoginViewController.swift */,
-				C81F64CE2062F09B004CD71E /* ProfileViewController.swift */,
 				C809FE3F20605B8900843233 /* OverviewViewController.swift */,
 				C81F64D020632644004CD71E /* SearchViewController.swift */,
 				C809FE4120605B8900843233 /* Main.storyboard */,
@@ -92,6 +93,16 @@
 				C809FE4920605B8900843233 /* Info.plist */,
 			);
 			path = "tempproj-mdavia";
+			sourceTree = "<group>";
+		};
+		C81F64D220633333004CD71E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C81F64CE2062F09B004CD71E /* ProfileViewController.swift */,
+				C809FE3D20605B8900843233 /* MailViewController.swift */,
+				C81F64D320634725004CD71E /* GoogleSignInViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		DE1E6097A08F69B963AB13C2 /* Frameworks */ = {
@@ -248,11 +259,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C81F64D420634725004CD71E /* GoogleSignInViewController.swift in Sources */,
 				C81F64D120632644004CD71E /* SearchViewController.swift in Sources */,
 				C809FE4020605B8900843233 /* OverviewViewController.swift in Sources */,
 				C809FE3C20605B8900843233 /* AppDelegate.swift in Sources */,
 				C81F64CF2062F09B004CD71E /* ProfileViewController.swift in Sources */,
-				C809FE3E20605B8900843233 /* LoginViewController.swift in Sources */,
+				C809FE3E20605B8900843233 /* MailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

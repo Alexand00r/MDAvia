@@ -12,22 +12,17 @@
         <!--Профиль-->
         <scene sceneID="sZM-RQ-FsS">
             <objects>
-                <viewController id="3vl-m7-Cir" userLabel="Профиль" customClass="ProfileViewController" customModule="tempproj_mdavia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Профиль" id="3vl-m7-Cir" userLabel="Профиль" customClass="ProfileViewController" customModule="tempproj_mdavia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0XG-NE-qth">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FOt-Yy-q5m">
-                                <rect key="frame" x="97" y="276" width="170" height="30"/>
+                                <rect key="frame" x="97" y="190" width="170" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Выход из системы"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dj5-E1-LAt">
-                                <rect key="frame" x="97" y="330" width="170" height="30"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Вход в систему"/>
                                 <connections>
-                                    <segue destination="9pv-A4-QxB" kind="modal" id="Nzq-n4-cCl"/>
+                                    <action selector="ProfileLogOut:" destination="3vl-m7-Cir" eventType="touchUpInside" id="QKw-b8-Kzg"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="Pyr-em-JFc">
@@ -48,11 +43,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="For debug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c1V-ds-dhF">
+                                <rect key="frame" x="16" y="438" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D1Q-T4-8GC">
+                                <rect key="frame" x="97" y="266" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Google"/>
+                                <connections>
+                                    <segue destination="4yO-Av-HHY" kind="modal" id="sRf-34-AUh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dj5-E1-LAt">
+                                <rect key="frame" x="97" y="228" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Почта"/>
+                                <connections>
+                                    <segue destination="9pv-A4-QxB" kind="modal" id="Nzq-n4-cCl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Профиль" image="profile" id="5Ko-AJ-r9d" userLabel="Профиль"/>
                     <connections>
+                        <outlet property="ImageProfile" destination="Pyr-em-JFc" id="EmW-Qo-Ybn"/>
+                        <outlet property="LabelForDebug" destination="c1V-ds-dhF" id="g6I-rd-wQm"/>
                         <outlet property="LabelProfileName" destination="HvV-1q-f31" id="qau-7B-xFe"/>
                         <outlet property="LabelUserId" destination="XWa-06-JUP" id="Bma-Tj-yWl"/>
                     </connections>
@@ -61,58 +81,16 @@
             </objects>
             <point key="canvasLocation" x="310.5" y="884.5"/>
         </scene>
-        <!--Вход / регистрация-->
+        <!--Вход через почту-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" userLabel="Вход / регистрация" customClass="LoginViewController" customModule="tempproj_mdavia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Вход через почту" id="9pv-A4-QxB" userLabel="Вход через почту" customClass="MailViewController" customModule="tempproj_mdavia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="bxH-7B-ctW">
-                                <rect key="frame" x="181" y="124" width="178" height="30"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Почта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TdA-cT-2MA">
-                                <rect key="frame" x="16" y="129" width="145" height="21"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" Пароль" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fcy-u4-8z2">
-                                <rect key="frame" x="16" y="167" width="145" height="21"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="BlJ-hH-NlL">
-                                <rect key="frame" x="181" y="162" width="178" height="30"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Логин" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p7G-HO-r20">
-                                <rect key="frame" x="16" y="91" width="145" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="5EY-xa-jJu">
-                                <rect key="frame" x="181" y="86" width="178" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mxS-hs-1JG">
-                                <rect key="frame" x="115" y="222" width="145" height="30"/>
+                                <rect key="frame" x="115" y="236" width="145" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Регистрация"/>
                                 <connections>
@@ -120,27 +98,54 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DKc-TX-u0w">
-                                <rect key="frame" x="115" y="260" width="145" height="30"/>
+                                <rect key="frame" x="115" y="274" width="145" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Вход в систему"/>
                                 <connections>
                                     <action selector="MailAuth:" destination="9pv-A4-QxB" eventType="touchUpInside" id="HJ6-tk-KLW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WBD-8F-OoD">
-                                <rect key="frame" x="115" y="298" width="145" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="bxH-7B-ctW">
+                                <rect key="frame" x="181" y="143" width="178" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Выход из системы"/>
-                                <connections>
-                                    <action selector="LogOut:" destination="9pv-A4-QxB" eventType="touchUpInside" id="1J9-UB-pLN"/>
-                                </connections>
-                            </button>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Почта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TdA-cT-2MA">
+                                <rect key="frame" x="16" y="148" width="145" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" Пароль" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fcy-u4-8z2">
+                                <rect key="frame" x="16" y="186" width="145" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="BlJ-hH-NlL">
+                                <rect key="frame" x="181" y="181" width="178" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="For debug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pMw-as-7UC">
+                                <rect key="frame" x="16" y="430" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Профиль" image="profile" id="acW-dT-cKf" userLabel="Регистрация"/>
                     <connections>
-                        <outlet property="LabelMail" destination="TdA-cT-2MA" id="T3h-w1-IhA"/>
+                        <outlet property="LabelDebug" destination="pMw-as-7UC" id="GIj-U0-fuH"/>
                         <outlet property="TextMail" destination="bxH-7B-ctW" id="cCC-6K-o3j"/>
                         <outlet property="TextMailPass" destination="BlJ-hH-NlL" id="nez-C5-H0P"/>
                     </connections>
@@ -149,10 +154,24 @@
             </objects>
             <point key="canvasLocation" x="818.5" y="884.5"/>
         </scene>
+        <!--Вход через Google-->
+        <scene sceneID="YiA-ks-3zw">
+            <objects>
+                <viewController storyboardIdentifier="Вход через Google" id="4yO-Av-HHY" userLabel="Вход через Google" customClass="GoogleSignInViewController" customModule="tempproj_mdavia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Lw-9D-DfS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jvs-cV-3ko" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="819" y="1702"/>
+        </scene>
         <!--Поиск-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SearchViewController" customModule="tempproj_mdavia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Поиск" id="8rJ-Kc-sve" customClass="SearchViewController" customModule="tempproj_mdavia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,7 +186,7 @@
         <!--Обзор-->
         <scene sceneID="q0l-KI-t1h">
             <objects>
-                <viewController title="Обзор" id="JqL-II-Vyi" customClass="OverviewViewController" customModule="tempproj_mdavia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Обзор" title="Обзор" id="JqL-II-Vyi" customClass="OverviewViewController" customModule="tempproj_mdavia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fb7-Wq-Amz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

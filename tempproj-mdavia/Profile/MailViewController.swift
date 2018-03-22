@@ -9,19 +9,20 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class MailViewController: UIViewController {
     
     @IBOutlet weak var TextMail: UITextField!
-    
-    @IBOutlet weak var LabelMail: UILabel!
-    
+        
     @IBOutlet weak var TextMailPass: UITextField!
 
+    @IBOutlet weak var LabelDebug: UILabel!
     
     @IBAction func MailReg(_ sender: Any) {
         let email = TextMail.text
         let pass = TextMailPass.text
         if TextMail.text == "" || TextMailPass.text == "" {
+            
+            //Обработка ошибки "пустые поля"
             let alertController = UIAlertController(title: "Ошибка", message: "Введите почту и пароль", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -30,16 +31,20 @@ class LoginViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
             
         } else {
+            
+            //Процесс создания нового пользователя
             Auth.auth().createUser(withEmail: email!, password: pass!) { (user, error) in
                 
                 if error == nil {
                     print("Регистрация пройдена")
-                    //Goes to the Setup page which lets the user take a photo for their profile picture and also chose a username
                     
-//                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
-//                    self.present(vc!, animated: true, completion: nil)
+                    //Возврат на окно профиля при успешной регистрации
+                    let prevViewController = self.storyboard?.instantiateViewController(withIdentifier: "Профиль")
+                    self.present(prevViewController!, animated: true, completion: nil)
                     
                 } else {
+                    
+                    //Вывод информации об ошибке
                     let alertController = UIAlertController(title: "Ошибка", message: error?.localizedDescription, preferredStyle: .alert)
                     
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -49,39 +54,37 @@ class LoginViewController: UIViewController {
                 }
             }
             
-            
-            
         }
         
     }
     
+    
+    //Авторизация под существующим логином (почта)
     @IBAction func MailAuth(_ sender: Any) {
         Auth.auth().signIn(withEmail: TextMail.text!, password: TextMailPass.text!) { (user, error) in
             
-            if let error = error {
-                print(error)
-                return
-            } else {
+            if error == nil {
                 print("Вход в аккаунт прошел успешно")
-
+                
+                //Возврат на окно профиля при успешной авторизации
+                let prevViewController = self.storyboard?.instantiateViewController(withIdentifier: "Профиль")
+                self.present(prevViewController!, animated: true, completion: nil)
+                
+            } else {
+                
+                //Вывод информации об ошибке
+                let alertController = UIAlertController(title: "Ошибка", message: error?.localizedDescription, preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+                return
             }
             
         }
         
     }
-    
-    @IBAction func LogOut(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            print("Выход из аккаунта прошел успешно")
-        } catch let signOutError as NSError {
-            print ("Ошибка логаута: %@", signOutError)
-        }
-        
-    }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
