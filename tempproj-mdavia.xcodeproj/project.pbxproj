@@ -17,7 +17,6 @@
 		C809FE5020605C3D00843233 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C809FE4F20605C3D00843233 /* GoogleService-Info.plist */; };
 		C81F64CF2062F09B004CD71E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F64CE2062F09B004CD71E /* ProfileViewController.swift */; };
 		C81F64D120632644004CD71E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F64D020632644004CD71E /* SearchViewController.swift */; };
-		C81F64D420634725004CD71E /* GoogleSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F64D320634725004CD71E /* GoogleSignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +33,6 @@
 		C809FE4F20605C3D00843233 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C81F64CE2062F09B004CD71E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C81F64D020632644004CD71E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		C81F64D320634725004CD71E /* GoogleSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInViewController.swift; sourceTree = "<group>"; };
 		C88D3B3E206177C800452724 /* tempproj-mdavia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "tempproj-mdavia.entitlements"; sourceTree = "<group>"; };
 		FED6C1B1AB2DF4DEE35A0701 /* Pods-tempproj-mdavia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tempproj-mdavia.release.xcconfig"; path = "Pods/Target Support Files/Pods-tempproj-mdavia/Pods-tempproj-mdavia.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,7 +98,6 @@
 			children = (
 				C81F64CE2062F09B004CD71E /* ProfileViewController.swift */,
 				C809FE3D20605B8900843233 /* MailViewController.swift */,
-				C81F64D320634725004CD71E /* GoogleSignInViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -259,7 +256,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C81F64D420634725004CD71E /* GoogleSignInViewController.swift in Sources */,
 				C81F64D120632644004CD71E /* SearchViewController.swift in Sources */,
 				C809FE4020605B8900843233 /* OverviewViewController.swift in Sources */,
 				C809FE3C20605B8900843233 /* AppDelegate.swift in Sources */,
@@ -407,7 +403,7 @@
 				DEVELOPMENT_TEAM = JTS2Z7UF8T;
 				INFOPLIST_FILE = "tempproj-mdavia/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Alexand00r-Co.tempproj-mdavia";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tempproj-mdavia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,7 +420,7 @@
 				DEVELOPMENT_TEAM = JTS2Z7UF8T;
 				INFOPLIST_FILE = "tempproj-mdavia/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Alexand00r-Co.tempproj-mdavia";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tempproj-mdavia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

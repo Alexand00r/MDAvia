@@ -8,8 +8,9 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var LabelProfileName: UILabel!
     @IBOutlet weak var LabelUserId: UILabel!
@@ -21,15 +22,19 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         //Операции, выполняемые при загрузке формы.
         profileDataUpdate()
         
+        GIDSignIn.sharedInstance().uiDelegate = self
+        LabelForDebug.text = "Форма загрузилась"
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     //Выход из системы пользователя
     @IBAction func ProfileLogOut(_ sender: Any) {
@@ -43,6 +48,7 @@ class ProfileViewController: UIViewController {
         }
         
     }
+    
     
     //Заполняем профильные данные пользователя
     func profileDataUpdate() {
@@ -59,7 +65,8 @@ class ProfileViewController: UIViewController {
             LabelProfileName.text = "Имя профиля"
             
         }
+        LabelForDebug.text = "Данные профиля обновились"
+
     }
-    
     
 }
