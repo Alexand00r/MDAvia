@@ -10,6 +10,10 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var LabelProfileName: UILabel!
+    
+    @IBOutlet weak var LabelUserId: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '020939F00BFBAE45A193CBE062ECB812'
+               BlueprintIdentifier = 'E3F7D779A374E05256CE546F930C0446'
                BlueprintName = 'Pods-tempproj-mdavia'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods-tempproj-mdavia.framework'>
