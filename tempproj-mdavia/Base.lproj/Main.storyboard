@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJS-jI-c37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310.5" y="884.5"/>
+            <point key="canvasLocation" x="311" y="990"/>
         </scene>
         <!--Вход через почту-->
         <scene sceneID="hNz-n2-bh7">
@@ -144,7 +144,7 @@
                                     <navigationItem title="Вход через почту" id="BFc-W2-wDP" userLabel="Вход через почту">
                                         <barButtonItem key="leftBarButtonItem" title="Назад" id="9u1-nh-T0Z">
                                             <connections>
-                                                <segue destination="3vl-m7-Cir" kind="modal" id="Exl-17-BRY"/>
+                                                <segue destination="49e-Tb-3d3" kind="modal" id="oCU-ka-Tcf"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -155,6 +155,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Профиль" image="profile" id="acW-dT-cKf" userLabel="Регистрация"/>
                     <connections>
+                        <outlet property="ButtonMailLogIn" destination="DKc-TX-u0w" id="1dG-aj-trW"/>
+                        <outlet property="ButtonMailReg" destination="mxS-hs-1JG" id="Xnx-5k-JYE"/>
                         <outlet property="LabelDebug" destination="pMw-as-7UC" id="GIj-U0-fuH"/>
                         <outlet property="TextMail" destination="bxH-7B-ctW" id="cCC-6K-o3j"/>
                         <outlet property="TextMailPass" destination="BlJ-hH-NlL" id="nez-C5-H0P"/>
@@ -162,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879" y="885"/>
+            <point key="canvasLocation" x="798" y="866"/>
         </scene>
         <!--Поиск-->
         <scene sceneID="wg7-f3-ORb">
@@ -219,7 +221,4 @@
         <image name="profile" width="42" height="42"/>
         <image name="search" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Exl-17-BRY"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -15,7 +15,11 @@ class MailViewController: UIViewController {
     @IBOutlet weak var TextMail: UITextField!
     @IBOutlet weak var TextMailPass: UITextField!
     @IBOutlet weak var LabelDebug: UILabel!
-
+    
+    @IBOutlet weak var ButtonMailReg: UIButton!
+    @IBOutlet weak var ButtonMailLogIn: UIButton!
+    
+    
     //Переменная для работы с БД (ниже добавим пользователя)
     var databaseRef: DatabaseReference!
     
@@ -113,9 +117,31 @@ class MailViewController: UIViewController {
         
     }
     
+    
+    //Активация полей, если вход уже выполнен
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let user = Auth.auth().currentUser
+        if user != nil {
+            TextMail.text = user?.email
+            TextMail.isEnabled = false
+            TextMailPass.text = "******"
+            TextMailPass.isEnabled = false
+            ButtonMailLogIn.isEnabled  = false
+            ButtonMailReg.isEnabled = false
+            
+        } else {
+            TextMail.text = "Введите почту"
+            TextMail.isEnabled = true
+            TextMailPass.text = "Введите пароль"
+            TextMailPass.isEnabled = true
+            ButtonMailLogIn.isEnabled  = true
+            ButtonMailReg.isEnabled = true
+            
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
