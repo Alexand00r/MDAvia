@@ -8,19 +8,88 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
+    var databaseRef: DatabaseReference!
 
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)
-        -> Bool {
-            FirebaseApp.configure()
-            return true
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
+        return true
     }
+
+
+    //Активация возможности приложения открывать URL Google
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        return GIDSignIn.sharedInstance().handle(url,
+                                                 sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                 annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+    }
+    
+    
+    //Процесс авторизации при помощи Google
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        //Вывод ошибки (при ее наличии) в консоль
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        print("Пользователь авторизовался в Google")
+        
+        let authentication = user.authentication
+        let credential = GoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!,
+                                                       accessToken: (authentication?.accessToken)!)
+        
+        //Авторизация в Firebase при помощи аккаунта Google
+        Auth.auth().signIn(with: credential) { (user, error) in
+            print("Пользователь авторизовался в Firebase")
+            
+            //Добавляем информацию о Google-пользователе в БД Firebase
+            self.databaseRef = Database.database().reference()
+            self.databaseRef.child("user_profiles").child(user!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                let snapshot = snapshot.value as? NSDictionary
+                
+                if(snapshot == nil)
+                {
+                    self.databaseRef.child("user_profiles").child(user!.uid).child("name").setValue(user?.displayName)
+                    self.databaseRef.child("user_profiles").child(user!.uid).child("email").setValue(user?.email)
+                }
+                
+                
+            })
+            
+            //попытка запустить обюновление профильных данных
+//            ProfileViewController().profileDataUpdate()
+//            print("говно")
+        }
+        
+        
+        
+//        //Вызываем обновление профильных данных из ProfileViewController
+//        ProfileViewController().profileDataUpdate()
+
+    }
+    
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
+        print("Вы вышли из системы")
+    }
+    
+    
+    
     
 //      Исходный вариант функции
 //    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
