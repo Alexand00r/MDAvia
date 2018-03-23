@@ -66,7 +66,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Профиль" image="profile" id="5Ko-AJ-r9d" userLabel="Профиль"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="5Ko-AJ-r9d" userLabel="Профиль"/>
                     <connections>
                         <outlet property="ImageProfile" destination="Pyr-em-JFc" id="EmW-Qo-Ybn"/>
                         <outlet property="LabelForDebug" destination="c1V-ds-dhF" id="g6I-rd-wQm"/>
@@ -166,7 +166,7 @@
             </objects>
             <point key="canvasLocation" x="798" y="866"/>
         </scene>
-        <!--Поиск-->
+        <!--Aviasales-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController storyboardIdentifier="Поиск" id="8rJ-Kc-sve" customClass="SearchViewController" customModule="tempproj_mdavia" customModuleProvider="target" sceneMemberID="viewController">
@@ -175,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Поиск" image="search" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Aviasales" image="search" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -190,7 +190,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Обзор" image="overview" id="M9W-Wm-0tk" userLabel="Third"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="overview" id="M9W-Wm-0tk" userLabel="Third"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjo-ne-X3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
