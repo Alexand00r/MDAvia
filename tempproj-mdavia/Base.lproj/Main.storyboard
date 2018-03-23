@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJS-jI-c37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310.5" y="884.5"/>
+            <point key="canvasLocation" x="311" y="979"/>
         </scene>
         <!--Вход через почту-->
         <scene sceneID="hNz-n2-bh7">
@@ -144,7 +144,7 @@
                                     <navigationItem title="Вход через почту" id="BFc-W2-wDP" userLabel="Вход через почту">
                                         <barButtonItem key="leftBarButtonItem" title="Назад" id="9u1-nh-T0Z">
                                             <connections>
-                                                <segue destination="3vl-m7-Cir" kind="modal" id="Exl-17-BRY"/>
+                                                <segue destination="49e-Tb-3d3" kind="modal" id="TFd-gw-bji"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -162,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879" y="885"/>
+            <point key="canvasLocation" x="801" y="852"/>
         </scene>
         <!--Поиск-->
         <scene sceneID="wg7-f3-ORb">
@@ -219,7 +219,4 @@
         <image name="profile" width="42" height="42"/>
         <image name="search" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Exl-17-BRY"/>
-    </inferredMetricsTieBreakers>
 </document>
