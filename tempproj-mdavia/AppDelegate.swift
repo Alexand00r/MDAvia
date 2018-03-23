@@ -69,9 +69,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 
             })
             
+            //попытка запустить обюновление профильных данных
+//            ProfileViewController().profileDataUpdate()
+//            print("говно")
         }
         
-        ProfileViewController().profileDataUpdate()
+        
+        
+//        //Вызываем обновление профильных данных из ProfileViewController
+//        ProfileViewController().profileDataUpdate()
 
     }
     
